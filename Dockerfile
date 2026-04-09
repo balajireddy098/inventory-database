@@ -1,13 +1,16 @@
-FROM node:20-slim
+FROM node:20-alpine
 
 WORKDIR /app
 
 # Install build dependencies for sqlite3
-RUN apt-get update && apt-get install -y \
+RUN apk add --no-cache \
     python3 \
     make \
     g++ \
-    && rm -rf /var/lib/apt/lists/*
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    giflib-dev
 
 COPY package*.json ./
 
