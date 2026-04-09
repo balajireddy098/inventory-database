@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: inventory-api
+    env: node
+    nodeVersion: 20
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
