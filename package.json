@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node src/server.js",
-    "test": "node test_api.js"
+    "test": "node test_api.js",
+    "build": "npm install",
+    "postinstall": "node -e \"require('sqlite3')\" || npm rebuild sqlite3"
   },
 
   "keywords": [],
